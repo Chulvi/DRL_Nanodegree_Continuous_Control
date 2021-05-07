@@ -1,25 +1,31 @@
 ### Learning Algorithm
-To resolve the challenge, has been used the algorithm **Dueling Double Deep Q Learning**. A combination of two improvements to the basic DQN:
+To resolve the challenge, has been used the algorithm **Multi-Agent Deep Deterministic Policy Gradient**. This method implement DDPG to be used for multiple agents at the same time, recording all their experiences in the replay buffer:
 
-Dueling DQN | Double DQN
+DDPG | MADDPG
 ------------ | -------------
-![Image of dueling](https://miro.medium.com/max/1468/1*81-seZY1rVwC0wzXBprFJg.png) | ![Image of double](https://cdn-media-1.freecodecamp.org/images/1*g5l4q162gDRZAAsFWtX7Nw.png)
+![Image of DDPG](https://miro.medium.com/max/1084/1*BVST6rlxL2csw3vxpeBS8Q.png) | ![Image of MADDPG](https://programmersought.com/images/862/5709e3323ebc72a6499d52623798369e.png)
 
-The **deep neural network** uses two hidden layers (64 units and 128 units). The **parameters** below have had the most successful results for this algorithm:
+The **deep neural networks** (actor and critic) use two hidden layers (128 units and 128 units) accompanied with batch normalization and dropout. 
+
+
+The **parameters** below have had the most successful results for this algorithm:
 
 ```python
-BUFFER_SIZE = int(100000)  # replay buffer size
-BATCH_SIZE = 64            # minibatch size
-GAMMA = 0.99               # discount factor
-TAU = 0.001                # for soft update of target parameters
-LR = 0.0005                # learning rate 
-UPDATE_EVERY = 4           # how often to update the network
-LAYERS = [64, 128]         # neural network num of layers
+BUFFER_SIZE = int(1e5)  # replay buffer size
+BATCH_SIZE = 128        # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR_ACTOR = 2e-3         # learning rate of the actor 
+LR_CRITIC = 2e-3        # learning rate of the critic
+WEIGHT_DECAY = 0        # L2 weight decay
 
-EPS_START = 1.0
-EPS_END = 0.01
-EPS_DECAY = 0.995
-N_GAMES = 2000
+ACTOR_UNITS_l1 = 128    # DNN layers units
+ACTOR_UNITS_l2 = 128
+CRITIC_UNITS_l1 = 128
+CRITIC_UNITS_l2 = 128
+
+GAMES = 300
+MAX_T = 1000
 ```
 
 
@@ -53,7 +59,6 @@ Game 1900  --->  Avg Reward: 16.16
 
 ### Ideas for Future Work
 
-- Try to implement the ***Rainbow*** paper (mix of several DQN improvements)
-- Implement a ***Dynamic Difficulty Adjusting*** approach
-  - *First step*: learn to pick up all the bananas
-  - *Second step*: learn to avoid blue bananas
+- Try to implement different algorithms to compare results. (PPO, A3C)
+- Experiment with 'All time high' checkpoints to resume avoiding exaggerated dropping.
+- Increase number of agents.
