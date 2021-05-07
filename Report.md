@@ -5,7 +5,21 @@ DDPG | MADDPG
 ------------ | -------------
 ![Image of DDPG](https://miro.medium.com/max/1084/1*BVST6rlxL2csw3vxpeBS8Q.png) | ![Image of MADDPG](https://programmersought.com/images/862/5709e3323ebc72a6499d52623798369e.png)
 
-The **deep neural networks** (actor and critic) use two hidden layers (128 units and 128 units) accompanied with batch normalization and dropout. 
+The **deep neural networks** (actor and critic) use two fully connected hidden layers (128 units and 128 units) accompanied with batch normalization and dropout. Let´s see the architectures:
+
+  For **Actor**:
+  ```
+  [Input] --->  [BatchNorm / Linear layer(input_size,128) / Relu / Dropout(0.1)] --->  [BatchNorm / Linear layer(128, 128) / Relu / Dropout(0.1)] --->  [BatchNorm / Linear layer(128, output_size) / Tanh / Dropout(0.1)] ---> Output
+  
+  Optimized with ADAM algorithm and learning rate = 0.002
+  ```
+  
+   For **Critic**:
+  ```
+  [Input] --->  [Linear layer(input_size,128) / Relu / BatchNorm] --->  [Linear layer(128,128) / Relu / Dropout(0.2)] --->  [Linear layer(128, output_size)] ---> Output
+  
+  Optimized with ADAM algorithm and learning rate = 0.002
+  ```
 
 
 The **parameters** below have had the most successful results for this algorithm:
