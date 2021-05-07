@@ -31,30 +31,24 @@ MAX_T = 1000
 
 ### Results
 
-The agent has solved the problem after 400 games, improving the score during 2000 games:
+The agent has solved the problem after 400 games, improving the score during 130 games:
 
-<img src="https://github.com/Chulvi/DRL_Nanodegree_Navigation/blob/main/images/rewards.png" width="800"></img>
+<img src="https://github.com/Chulvi/DRL_Nanodegree_Continuous_Control/blob/main/images/rewards.png" width="800"></img>
 
 ```
-Game 100  --->  Avg Reward: 2.05
-Game 200  --->  Avg Reward: 7.22
-Game 300  --->  Avg Reward: 11.78
-Game 400  --->  Avg Reward: 13.11
-Game 500  --->  Avg Reward: 15.08
-Game 600  --->  Avg Reward: 16.04
-Game 700  --->  Avg Reward: 15.78
-Game 800  --->  Avg Reward: 17.0
-Game 900  --->  Avg Reward: 15.84
-Game 1000  --->  Avg Reward: 15.73
-Game 1100  --->  Avg Reward: 15.4
-Game 1200  --->  Avg Reward: 16.53
-Game 1300  --->  Avg Reward: 16.61
-Game 1400  --->  Avg Reward: 15.81
-Game 1500  --->  Avg Reward: 16.51
-Game 1600  --->  Avg Reward: 16.12
-Game 1700  --->  Avg Reward: 16.83
-Game 1800  --->  Avg Reward: 16.42
-Game 1900  --->  Avg Reward: 16.16
+Game 10  --->  Avg Reward: 0.85  ---> Reward: 0.74
+Game 20  --->  Avg Reward: 1.51  ---> Reward: 2.87
+Game 30  --->  Avg Reward: 3.94  ---> Reward: 15.8
+Game 40  --->  Avg Reward: 7.24  ---> Reward: 20.61
+Game 50  --->  Avg Reward: 12.16  ---> Reward: 37.04
+Game 60  --->  Avg Reward: 16.28  ---> Reward: 37.48
+Game 70  --->  Avg Reward: 19.14  ---> Reward: 35.51
+Game 80  --->  Avg Reward: 21.07  ---> Reward: 31.54
+Game 90  --->  Avg Reward: 22.03  ---> Reward: 31.25
+Game 100  --->  Avg Reward: 23.22  ---> Reward: 32.88
+Game 110  --->  Avg Reward: 26.61  ---> Reward: 33.71
+Game 120  --->  Avg Reward: 29.85  ---> Reward: 35.77
+Game 130  --->  Avg Reward: 32.47  ---> Reward: 34.61
 ```
 
 ### Ideas for Future Work
