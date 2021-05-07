@@ -31,7 +31,7 @@ MAX_T = 1000
 
 ### Results
 
-The agent has solved the problem after 400 games, improving the score during 130 games:
+The agent has solved the problem after 130 games:
 
 <img src="https://github.com/Chulvi/DRL_Nanodegree_Continuous_Control/blob/main/images/rewards.png" width="800"></img>
 
